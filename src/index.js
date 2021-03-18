@@ -3,11 +3,24 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import Login from './Routes/Login'
+import { Switch, Route, BrowserRouter } from "react-router-dom";
+import { ChakraProvider } from "@chakra-ui/react"
+
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <ChakraProvider>
+      <BrowserRouter>
+        <Switch>
+          <Route path="/dashboard">
+            <App />
+          </Route>
+          <Route path="/">
+            <Login /> 
+          </Route>      
+        </Switch>
+      </BrowserRouter>
+    </ChakraProvider>,
   document.getElementById('root')
 );
 
